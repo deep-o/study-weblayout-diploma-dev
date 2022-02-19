@@ -1,0 +1,93 @@
+.special {
+  position: relative;
+  padding: 35px 0;
+
+  &__title {
+    position: absolute;
+    top: 35px;
+
+    @include mobile-album {
+      position: relative;
+      top: auto;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__swiper {
+    position: relative;
+    padding-top: 58px;
+
+    @include mobile-album {
+      padding-top: 0;
+      padding-bottom: 48px;
+    }
+  }
+
+  .card-product {
+    height: auto;
+
+    &__raiting {
+      display: none;
+    }
+
+    &__pic {
+      align-items: center;
+      margin-bottom: 29px;
+      padding-top: 20px;
+      transform: translateY(17px);
+
+      @include big-desktop {
+        align-items: flex-end;
+        margin-bottom: 17px;
+        padding-top: 7px;
+        transform: translateY(0);
+      }
+    }
+
+    &__img {
+      align-self: center;
+
+      @include big-desktop {
+        align-self: flex-end;
+      }
+    }
+
+    &__title {
+      margin-bottom: 22px;
+
+      @include mobile-album {
+        font-size: 24px;
+      }
+    }
+
+    &__text {
+      margin-bottom: 24px;
+    }
+
+    &__price {
+      &--action {
+        display: inline;
+      }
+
+      &--normal {
+        text-decoration: line-through;
+      }
+    }
+
+    &__btn {
+      @include mobile-album {
+        padding: 19px 35px;
+      }
+    }
+  }
+}
+
+.special-swiper {
+  position: relative;
+  overflow: hidden;
+
+  .swiper-wrapper {
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+}

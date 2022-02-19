@@ -1,0 +1,74 @@
+/* stylelint-disable */
+
+@mixin custom-checkbox {
+  position: relative;
+  padding-left: 22px;
+  font-size: 14px;
+
+  @include mobile-album {
+    padding-left: 14px;
+    font-size: 12px;
+  }
+
+  &__input {
+    appearance: none;
+    -moz-appearance: none;
+
+    &:checked {
+      &+.check__box {
+        background-color: var(--primary);
+      }
+    }
+
+    &:focus {
+      &+.check__box {
+        outline: 1px solid var(--primary-shade);
+        outline-offset: 2px;
+      }
+    }
+
+    &.error {
+      &+.check__box {
+        outline: 1px solid var(--red-input);
+        outline-offset: 2px;
+      }
+    }
+  }
+
+  &__box {
+    position: absolute;
+    left: 0;
+    border: 1px solid var(--primary);
+    border-radius: 2px;
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+  }
+
+  &__svg {
+    @include flex-all-center;
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke: var(--white);
+  }
+
+  &__label {
+    cursor: pointer;
+  }
+
+  &__link {
+    font-size: 14px;
+    color: var(--primary);
+    text-decoration: underline;
+
+    @include mobile-album {
+      font-size: 12px;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: var(--pink-light);
+    }
+  }
+}

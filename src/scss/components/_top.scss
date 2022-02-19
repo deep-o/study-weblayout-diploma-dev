@@ -1,0 +1,143 @@
+.top {
+  padding: 35px 0;
+
+  &__title {
+    margin-bottom: 26px;
+  }
+
+  &__card {
+    &--lg {
+      .subcategory-list {
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+.top-card {
+  @include flex;
+
+  flex-direction: column;
+  border-radius: 10px;
+  min-height: 511px;
+  background-color: var(--grey-light);
+
+  &__wrap {
+    @include flex;
+
+    flex-direction: column;
+    padding-top: 27px;
+    padding-bottom: 23px;
+    height: 100%;
+
+    @include big-desktop {
+      padding: 30px 0;
+    }
+
+    @include mobile-album {
+      padding-top: 15px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 13px;
+    padding-left: 30px;
+
+    @include big-desktop {
+      margin-bottom: 10px;
+    }
+
+    @include mobile-album {
+      padding-left: 16px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 34px;
+    padding-left: 30px;
+
+    @include big-desktop {
+      margin-bottom: 29px;
+    }
+
+    @include mobile-album {
+      @include flex-v-center;
+
+      margin-bottom: 13px;
+      padding-left: 16px;
+    }
+  }
+
+  &__pic {
+    width: 100%;
+  }
+
+  &__img {
+    margin-bottom: 32px;
+    min-height: 296px;
+    object-fit: cover;
+
+    @include big-desktop {
+      margin-bottom: 29px;
+      min-height: auto;
+      object-fit: contain;
+    }
+
+    @include mobile-album {
+      margin-bottom: 0;
+      min-height: auto;
+    }
+  }
+
+  &__link {
+    margin-top: auto;
+    padding-left: 30px;
+    transform: translateY(-8px);
+
+    @include big-desktop {
+      transform: translateY(0);
+    }
+
+    @include mobile-album {
+      padding-left: 5px;
+      transform: translateY(0);
+    }
+  }
+
+  @include mobile-album {
+    min-height: auto;
+  }
+}
+
+.subcategory-list {
+  @include flex;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 30px;
+
+      @include mobile-album {
+        margin-right: 20px;
+        margin-bottom: 4px;
+      }
+    }
+
+    @include mobile-album {
+      height: 10px;
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    color: var(--grey);
+
+    @include mobile-album {
+      font-size: 10px;
+      line-height: 10px;
+    }
+  }
+
+  @include mobile-album {
+    flex-direction: column;
+  }
+}

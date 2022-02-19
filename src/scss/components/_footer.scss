@@ -1,0 +1,167 @@
+.footer {
+  &__top {
+    padding-top: 23px;
+    padding-bottom: 18px;
+    background-color: var(--md-grey);
+
+    @include small-tablet {
+      padding-top: 20px;
+    }
+  }
+
+  &__bottom {
+    @include flex-all-center;
+
+    padding: 8px 0;
+  }
+}
+
+.footer-links {
+  @include flex-start;
+
+  flex-direction: column;
+
+  &__logo {
+    margin-bottom: 28px;
+
+    @include small-tablet {
+      margin-bottom: 32px;
+      transform: translateY(6px);
+    }
+
+    @include mobile-album {
+      margin-bottom: 29px;
+    }
+  }
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @include mobile-album {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include mobile-album {
+    margin-bottom: 24px;
+  }
+}
+
+.social {
+  @include flex-start;
+
+  transform: translateX(-3px);
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 14px;
+    }
+  }
+
+  &__svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--grey);
+    transition: fill 0.3s ease-out;
+  }
+
+  &__link {
+    @include flex-all-center;
+
+    padding: 3px;
+    transition: background-color 0.3s ease-out;
+
+    &:focus {
+      background-color: var(--primary-light);
+
+      svg {
+        fill: var(--md-grey);
+      }
+    }
+
+    @include for-desktop {
+      &:hover {
+        background-color: transparent;
+
+        svg {
+          fill: var(--primary);
+        }
+      }
+    }
+
+    &:active {
+      background-color: transparent;
+
+      svg {
+        fill: var(--primary-shade);
+      }
+    }
+  }
+
+  @include small-tablet {
+    transform: translateX(3px);
+  }
+}
+
+.footer-navs {
+  @include flex-sb;
+
+  padding: 3px;
+
+  &__title {
+    margin-bottom: 6px;
+    font-size: 16px;
+    line-height: 16px;
+    color: var(--black);
+  }
+
+  @include big-desktop {
+    padding: 5px;
+  }
+
+  @include mobile-album {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 24px;
+  }
+}
+
+.footer-nav {
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__link {
+    color: var(--grey);
+  }
+}
+
+.services-nav {
+  transform: translateX(-18px);
+
+  @include mobile-album {
+    transform: translateX(0);
+  }
+}
+
+.connect-nav {
+  transform: translateX(-16px);
+
+  @include mobile-album {
+    transform: translateX(0);
+  }
+}
+
+.copyright {
+  font-size: 14px;
+  line-height: 14px;
+  color: var(--grey);
+
+  &__mark {
+    margin-right: 12px;
+  }
+}

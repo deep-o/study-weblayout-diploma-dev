@@ -1,0 +1,77 @@
+.banner {
+  margin-bottom: 35px;
+  background-image: url("../img/banner-md.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__container {
+    padding-top: 156px;
+    padding-bottom: 151px;
+
+    @include small-tablet {
+      transform: translateX(-36px);
+    }
+
+    @include mobile-album {
+      padding-top: 30px;
+      padding-bottom: 0;
+      height: 210px;
+      transform: translateX(0);
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display";
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 72px;
+    letter-spacing: 1.1px;
+    color: var(--gold);
+
+    @include mobile-album {
+      font-size: 24px;
+      line-height: 28.8px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 51px;
+    max-width: 508px;
+    font-size: 48px;
+    color: var(--white);
+
+    @include mobile-album {
+      font-size: 16px;
+    }
+  }
+
+  &__btn {
+    padding: 20px 30px;
+
+    @include mobile-album {
+      display: none;
+    }
+  }
+
+  @include big-desktop {
+    background-image: url("../img/banner.jpg");
+  }
+}
+
+.banner-mobile {
+  &__btn {
+    &--mobile {
+      display: none;
+
+      @include mobile-album {
+        display: block;
+        margin: 0 auto;
+      }
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+}

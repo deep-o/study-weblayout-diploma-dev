@@ -1,0 +1,13 @@
+import './components/accessability.js';
+import './components/selects.js';
+import './components/swipers.js';
+import './components/validate.js';
+import './components/tippy.js';
+import './components/events.js';
+import './components/burger.js';
+import './components/crumps.js';
+import './components/catalog.js';
+import './components/filters.js';
+import './components/product.js';
+import './components/supply.js';
+import './components/contacts.js';

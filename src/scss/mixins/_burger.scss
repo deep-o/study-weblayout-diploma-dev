@@ -1,0 +1,121 @@
+/* stylelint-disable */
+
+@mixin burger {
+  --burger-width: 24px;
+  --burger-height: 24px;
+  --burger-line-height: 3px;
+
+  position: relative;
+  border: none;
+  padding: 0;
+  width: var(--burger-width);
+  height: var(--burger-height);
+  color: var(--primary);
+  background-color: transparent;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: var(--burger-line-height);
+    background-color: currentColor;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    top: calc(100% - var(--burger-line-height));
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: var(--burger-line-height);
+    background-color: currentColor;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &--active {
+    &::before {
+      top: 50%;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    &::after {
+      top: 50%;
+      transform: rotate(-45deg);
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    .burger__line {
+      transform: scale(0);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+  &:focus {
+    outline: 1px solid var(--primary);
+    outline-offset: 3px;
+    background-color: var(--pink-violet);
+  }
+}
+
+@mixin burger-menu {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  background-color: var(--white);
+  overflow: hidden;
+
+  @include mobile-album {
+    top: 120px;
+  }
+
+  &__wrap {
+    position: relative;
+    padding-top: 92px;
+    padding-bottom: 60px;
+  }
+
+  &__nav {
+    height: 100%;
+  }
+
+  &__close {
+    top: 37px;
+    left: 0;
+  }
+
+  &__list {
+    @include flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 148px;
+  }
+
+  &__item {
+    &:not(:nth-child(3n)) {
+      margin-bottom: 41px;
+    }
+  }
+
+  &__svg {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    width: 161px;
+    height: 112px;
+  }
+}
+

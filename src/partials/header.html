@@ -1,0 +1,97 @@
+<header class="header">
+  <div class="header__overlay"></div>
+  <div class="container header-grid header__container">
+    <div class="geo-phone header-grid__geo">
+      <div class="geo-phone__geo geo">
+        <label class="geo__lable" for="city">Ваш регион:</label>
+        <select name="city" id="city" class="js-choice visually-hidden" aria-label="список регионов"></select>
+      </div>
+      <div class="geo-phone__phone phone">
+        <a class="phone__link link-ui" href="tel:+7495885-45-47" aria-label="телефон">
+          <svg class="phone__svg">
+            <use xlink:href="img/sprite.svg#phone"></use>
+          </svg>
+          +7<span>&nbsp;(495)&nbsp;</span>885-45-47
+        </a>
+      </div>
+    </div>
+
+    <ul class="extra-menu header-grid__extra list-reset">
+      <li class="extra-menu__item">
+        <a href="#" class="extra-menu__link link-ui">О компании</a>
+      </li>
+      <li class="extra-menu__item">
+        <a href="#" class="extra-menu__link link-ui">Гарантия и возврат</a>
+      </li>
+      <li class="extra-menu__item">
+        <a href="#" class="extra-menu__link link-ui">Корпоративным клиентам</a>
+      </li>
+      <li class="extra-menu__item">
+        <a href="#" class="extra-menu__link link-ui">Дизайн-решение</a>
+      </li>
+    </ul>
+
+    <nav class="main-menu header-grid__main">
+      <ul class="main-menu__list list-reset">
+        <li class="main-menu__item">
+          <a href="catalog.html" class="main-menu__link link-ui">Каталог</a>
+        </li>
+        <li class="main-menu__item">
+          <a href="#" class="main-menu__link link-ui">Магазины</a>
+        </li>
+        <li class="main-menu__item">
+          <a href="#" class="main-menu__link link-ui">Шоу-рум</a>
+        </li>
+        <li class="main-menu__item">
+          <a href="#" class="main-menu__link link-ui">Доставка и оплата</a>
+        </li>
+        <li class="main-menu__item">
+          <a href="#" class="main-menu__link link-ui">Дисконт</a>
+        </li>
+        <li class="main-menu__item">
+          <a href="contacts.html" class="main-menu__link link-ui">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+
+    <a href="index.html" class="logo header__logo header-grid__logo">
+      <img class="logo__img" src="img/Logo.svg" alt="логотип">
+    </a>
+
+    <form class="search-filter header-grid__search">
+      <figure class="search">
+        <input class="search__input input-ui" type="text" placeholder="Я хочу купить..." aria-label="строка поиска">
+        <svg class="search__svg">
+          <use xlink:href="img/sprite.svg#search"></use>
+        </svg>
+        <button class="search__btn circle-btn btn-reset" aria-label="найти"></button>
+      </figure>
+      <div class="filter">
+        <select name="category" id="category" class="js-choice filter visually-hidden" aria-label="список категорий">
+          <option>Категория</option>
+        </select>
+      </div>
+    </form>
+
+    <div class="header-btns header-grid__btns">
+      <button class="header-btns__item account btn-reset" aria-label="войти в личный кабинет">
+        <svg class="account__svg">
+          <use xlink:href="img/sprite.svg#account"></use>
+        </svg>
+      </button>
+
+      <button class="header-btns__item cart btn-reset" aria-label="корзина">
+        <span class="cart__items">0</span>
+        <svg class="cart__svg">
+          <use xlink:href="img/sprite.svg#cart"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="burger-wrap header-grid__burger">
+      <button class="burger btn-reset" aria-label="раскрыть меню">
+        <span class="burger__line"></span>
+      </button>
+    </div>
+
+  </div>
+</header>

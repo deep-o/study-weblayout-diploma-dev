@@ -1,0 +1,503 @@
+.header-grid {
+  display: grid;
+  column-gap: 27px;
+  grid-template-areas:
+    "geo geo geo geo geo geo geo geo geo"
+    "extra extra extra extra extra extra extra btns btns"
+    "logo logo main main main main main main main"
+    "search search search search search search search search search";
+  grid-template-columns: repeat(9, 1fr);
+
+  &__geo {
+    grid-area: geo;
+  }
+
+  &__extra {
+    grid-area: extra;
+  }
+
+  &__main {
+    grid-area: main;
+  }
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  &__search {
+    grid-area: search;
+  }
+
+  &__btns {
+    grid-area: btns;
+  }
+
+  &__burger {
+    grid-area: burger;
+  }
+
+  @include big-desktop {
+    grid-template-areas:
+      "geo geo geo geo extra extra extra extra extra extra extra extra"
+      "logo logo logo main main main main main main main main main"
+      "search search search search search search search search search search btns btns";
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  @include tablet {
+    grid-template-areas:
+      "geo geo geo"
+      "extra extra extra"
+      "burger logo btns"
+      "search search search";
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include mobile-album {
+    grid-template-areas:
+      "logo logo"
+      "geo geo"
+      "burger btns"
+      "search search";
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+  }
+}
+
+.high-grid {
+  display: grid;
+  column-gap: var(--gap);
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 41px;
+
+  @include big-desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile-album {
+    column-gap: 16px;
+    row-gap: 16px;
+  }
+}
+
+.top-grid {
+  display: grid;
+  column-gap: var(--gap);
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: var(--gap);
+
+  &__item {
+    &--lg {
+      grid-column: span 2;
+
+      @include big-desktop {
+        grid-column: span 3;
+      }
+
+      @include tablet {
+        order: -1;
+        grid-column: span 2;
+      }
+    }
+
+    &--md {
+      order: 1;
+      grid-column: span 1;
+
+      @include big-desktop {
+        order: 0;
+        grid-column: span 3;
+      }
+
+      @include tablet {
+        order: 0;
+        grid-column: span 1;
+      }
+    }
+
+    &--sm {
+      grid-column: span 1;
+
+      &-first {
+        @include tablet {
+          order: -1;
+        }
+      }
+
+      &:last-child {
+        order: 1;
+      }
+
+      @include big-desktop {
+        grid-column: span 2;
+      }
+
+      @include tablet {
+        grid-column: span 1;
+      }
+    }
+  }
+
+  @include big-desktop {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile-album {
+    column-gap: 16px;
+  }
+}
+
+.callback-grid {
+  display: grid;
+  column-gap: var(--gap);
+  grid-template-columns: repeat(9, 1fr);
+
+  &__left {
+    grid-column: span 4;
+
+    @include big-desktop {
+      grid-column: span 1;
+    }
+
+    @include tablet {
+      grid-column: span 2;
+    }
+
+    @include mobile-album {
+      grid-column: span 1;
+    }
+  }
+
+  &__right {
+    grid-column: span 5;
+
+    @include big-desktop {
+      grid-column: span 1;
+    }
+
+    @include tablet {
+      grid-column: span 1;
+    }
+  }
+
+  @include big-desktop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include mobile-album {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-grid {
+  display: grid;
+  column-gap: calc(var(--gap) / 2);
+  grid-template-columns: repeat(9, 1fr);
+
+  &__left {
+    grid-column: span 2;
+
+    @include big-desktop {
+      grid-column: span 2;
+    }
+
+    @include tablet {
+      grid-column: span 1;
+    }
+  }
+
+  &__right {
+    grid-column: span 7;
+
+    @include big-desktop {
+      grid-column: span 4;
+    }
+
+    @include tablet {
+      grid-column: span 1;
+    }
+  }
+
+  @include big-desktop {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.catalog-page-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 10px;
+
+  &__tags {
+    @include big-desktop {
+      grid-column: span 3;
+      grid-row-start: span 1;
+    }
+  }
+
+  &__filters {
+    @include big-desktop {
+      order: -1;
+      grid-column: span 1;
+      grid-row: span 3;
+    }
+  }
+
+  &__cards {
+    @include big-desktop {
+      grid-column: span 3;
+    }
+  }
+
+  @include big-desktop {
+    column-gap: var(--gap);
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 21px;
+  }
+
+  @include tablet {
+    row-gap: 24px;
+  }
+}
+
+.catalog-filters-grid {
+  display: grid;
+  column-gap: var(--gap);
+  align-items: center;
+  grid-template-columns: repeat(9, 1fr);
+
+  &__label {
+    grid-column: span 1;
+
+    @include big-desktop {
+      grid-column: auto;
+    }
+
+    @include tablet {
+      grid-column: span 3;
+    }
+
+    @include mobile-album {
+      grid-column: span 2;
+    }
+  }
+
+  &__filter {
+    grid-column: span 2;
+
+    @include big-desktop {
+      grid-column: auto;
+    }
+
+    @include tablet {
+      grid-column: span 1;
+
+      &:nth-child(odd) {
+        grid-column: 1;
+      }
+    }
+  }
+
+  @include big-desktop {
+    column-gap: normal;
+    grid-template-columns: none;
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 16px;
+  }
+
+  @include mobile-album {
+    column-gap: calc(var(--gap) / 2);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.catalog-cards-grid {
+  display: grid;
+  grid-gap: var(--gap);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, minmax(420px, 1fr));
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile-album {
+    column-gap: calc(var(--gap) / 2);
+    grid-template-rows: repeat(3, minmax(278px, 1fr));
+  }
+}
+
+.product-hero-grid {
+  display: grid;
+  column-gap: var(--gap);
+  grid-template-columns: repeat(9, 1fr);
+
+  &__main {
+    grid-column: span 5;
+
+    @include big-desktop {
+      grid-column: span 1;
+    }
+
+    @include tablet {
+      grid-column: span 6;
+    }
+
+    @include mobile-album {
+      grid-column: span 1;
+    }
+  }
+
+  &__mini {
+    order: 1;
+    grid-column: span 5;
+
+    @include big-desktop {
+      grid-column: span 1;
+    }
+
+    @include tablet {
+      order: 0;
+      grid-column: span 2;
+    }
+
+    @include mobile-album {
+      grid-column: span 1;
+    }
+  }
+
+  &__card {
+    grid-column: span 4;
+    grid-row: span 2;
+
+    @include big-desktop {
+      grid-column: span 1;
+    }
+
+    @include tablet {
+      grid-column: span 4;
+      grid-row: span 1;
+    }
+
+    @include mobile-album {
+      grid-column: span 1;
+    }
+  }
+
+  @include big-desktop {
+    display: grid;
+    column-gap: var(--gap);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include mobile-album {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.product-content-grid {
+  display: grid;
+  column-gap: var(--gap);
+  grid-template-columns: repeat(9, 1fr);
+
+  &__descr {
+    grid-column: span 5;
+  }
+
+  &__table {
+    grid-column: span 4;
+  }
+
+  @include big-desktop {
+    grid-template-columns: repeat(2, 1fr);
+
+    &__descr {
+      grid-column: span 1;
+
+      @include tablet {
+        grid-column: span 1;
+      }
+    }
+
+    &__table {
+      grid-column: span 1;
+
+      @include tablet {
+        grid-column: span 1;
+      }
+    }
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.product-table-grid {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 47% 54%;
+  row-gap: 9px;
+
+  @include big-desktop {
+    grid-template-columns: 52% 48%;
+  }
+
+  @include tablet {
+    grid-template-columns: 69% 38%;
+  }
+
+  @include mobile-album {
+    grid-template-columns: 100%;
+  }
+}
+
+.coop-grid {
+  display: grid;
+  column-gap: var(--gap);
+  grid-template-columns: repeat(9, 1fr);
+
+  &__item {
+    grid-column: span 8;
+
+    @include big-desktop {
+      grid-column: span 2;
+    }
+
+    @include tablet {
+      grid-column: span 1;
+    }
+  }
+
+  @include big-desktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -1,0 +1,53 @@
+.high-raiting {
+  padding-top: 35px;
+  padding-bottom: 35px;
+
+  &__wrap {
+    @include flex-h-center;
+
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    flex-basis: 100%;
+    margin-bottom: 26px;
+  }
+
+  &__list {
+    flex-basis: 100%;
+    margin-bottom: 41px;
+  }
+
+  &__btn {
+    margin-bottom: 35px;
+    padding: 20px 35px;
+
+    &--card {
+      @include mobile-album {
+        padding-right: 0;
+        padding-left: 0;
+        width: 100%;
+      }
+    }
+
+    @include mobile {
+      padding: 20px 0;
+      width: 100%;
+    }
+  }
+
+  .card-product {
+    &__pic {
+      margin-bottom: 12px;
+      padding-bottom: 3px;
+
+      @include big-desktop {
+        margin-bottom: 12px;
+      }
+
+      @include small-tablet {
+        margin-bottom: 13px;
+      }
+    }
+  }
+}

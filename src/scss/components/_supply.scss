@@ -1,0 +1,145 @@
+.coop {
+  padding-top: 10px;
+  padding-bottom: 67px;
+
+  &__title {
+    margin-bottom: 32px;
+  }
+}
+
+.coop-block {
+  margin-bottom: 33px;
+
+  &__title {
+    margin-bottom: 12px;
+    font-size: 24px;
+  }
+
+  &__text {
+    line-height: 29px;
+
+    @include mobile-album {
+      font-size: 14px;
+      line-height: 25px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.get-list {
+  width: 75%;
+
+  &__item {
+    position: relative;
+    margin-bottom: 0;
+    padding-left: 37px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 25px;
+      height: 100%;
+      background-position: center top;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+
+    &--one {
+      &::before {
+        background-image: url("../img/network.svg");
+      }
+    }
+
+    &--two {
+      &::before {
+        background-image: url("../img/briefcase.svg");
+      }
+    }
+
+    &--three {
+      &::before {
+        background-image: url("../img/request.svg");
+      }
+    }
+  }
+
+  &__text {
+    line-height: 24px;
+  }
+
+  @include tablet {
+    width: 100%;
+  }
+}
+
+.advantages-list {
+  counter-reset: adv;
+
+  &__item {
+    list-style-type: none;
+
+    &::before {
+      counter-increment: adv;
+      content: "Возможность "counter(adv) ":";
+      display: block;
+      margin-bottom: 17px;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+  }
+}
+
+.warranty-list {
+  counter-reset: warr;
+
+  &__item {
+    position: relative;
+    list-style-type: none;
+    padding-left: 26px;
+
+    &::before {
+      counter-increment: warr;
+      content: counter(warr) ".";
+      position: absolute;
+      left: 0;
+      top: 5px;
+      color: var(--secondary);
+    }
+  }
+}
+
+.warranty-period {
+  @include flex-v-center;
+
+  &__img {
+    display: inline-block;
+    margin-right: 32px;
+    width: 77px;
+    height: 116px;
+    background-image: url("../img/pencil.svg");
+    background-position: center center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  &__text {
+    width: 62.5%;
+    font-size: 24px;
+    transform: translateY(-3px);
+
+    @include tablet {
+      width: 84%;
+    }
+
+    @include mobile-album {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}

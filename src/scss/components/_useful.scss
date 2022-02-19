@@ -1,0 +1,91 @@
+.useful {
+  position: relative;
+  padding: 35px 0;
+
+  &__title {
+    position: absolute;
+    top: 35px;
+    margin-bottom: 26px;
+
+    @include mobile-album {
+      position: relative;
+      top: auto;
+      margin-bottom: 26px;
+    }
+  }
+}
+
+.useful-swiper {
+  position: relative;
+  overflow: hidden;
+  padding-top: 58px;
+
+  &__item {
+    position: relative;
+    height: auto;
+  }
+
+  @include small-tablet {
+    padding-top: 56px;
+  }
+
+  @include mobile-album {
+    padding-top: 0;
+    padding-bottom: 48px;
+  }
+}
+
+.useful-card {
+  @include flex;
+
+  position: relative;
+  flex-direction: column;
+  border-radius: 10px;
+  height: 100%;
+  background-color: var(--grey-light);
+
+  &__img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height: 202px;
+    object-fit: cover;
+
+    @include big-desktop {
+      height: 426px;
+    }
+  }
+
+  &__wrap {
+    @include flex-start;
+
+    flex-wrap: wrap;
+    padding: 30px;
+    padding-top: 28px;
+    height: 100%;
+  }
+
+  &__title {
+    flex-basis: 100%;
+    margin-bottom: 29px;
+
+    @include big-desktop {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21.79px;
+
+    @include big-desktop {
+      font-size: 24px;
+      line-height: 32.68px;
+    }
+  }
+
+  &__btn {
+    margin-top: auto;
+  }
+}
